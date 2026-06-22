@@ -24,6 +24,6 @@ A performance-driven engineer specializing in high-concurrency client-side appli
 
 ### 📊 GitHub Metrics & Architecture Summary
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=SubharupBiswas&show_icons=true&theme=tokyonight&hide_border=true" height="150" alt="GitHub Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SubharupBiswas&layout=compact&theme=tokyonight&hide_border=true" height="150" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=SubharupBiswas&show_icons=true&bg_color=00000000&hide_border=true&title_color=0969da&text_color=24292f&icon_color=0969da" height="150" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SubharupBiswas&layout=compact&bg_color=00000000&hide_border=true&title_color=0969da&text_color=24292f&icon_color=0969da" height="150" alt="Top Languages" />
 </p>
