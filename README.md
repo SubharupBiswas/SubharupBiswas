@@ -42,6 +42,6 @@ Beyond building for the web, I actively explore network layers and environment s
 ## 📊 GitHub Metrics
 
 <p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=SubharupBiswas&show_icons=true&theme=transparent&title_color=0969da&icon_color=2da44e&text_color=24292f&hide_border=true&hide_rank=true&custom_title=Subharup%20Biswas'%20GitHub%20Stats&count_private=true&include_all_commits=true" alt="Subharup's GitHub Stats" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=SubharupBiswas&show_icons=true&theme=transparent&title_color=0969da&icon_color=2da44e&text_color=24292f&hide_border=true&hide_rank=true&custom_title=Subharup%20Biswas%27%20GitHub%20Stats&count_private=true" alt="Subharup's GitHub Stats" width="48%" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SubharupBiswas&layout=compact&theme=transparent&title_color=0969da&text_color=24292f&hide_border=true" alt="Top Languages" width="48%" />
 </p>
