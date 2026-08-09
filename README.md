@@ -15,7 +15,9 @@ Computer Science Engineering student specializing in production-grade web applic
 ---
 
 <!-- AUTO-SUMMARY:START -->
-<!-- Automated Gemini analysis of public repositories will render here -->
+
+Gemini API Error: 404
+
 <!-- AUTO-SUMMARY:END -->
 
 ---
