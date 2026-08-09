@@ -1,11 +1,13 @@
-# Hi, I'm Subharup 🌐
+<div align="center">
 
-### **Software Engineer | Full-Stack & Systems Performance**
-Computer Science Engineering student specializing in production-grade web applications, resilient backend systems, and developer tools.
+  <!-- Self-hosted, theme-adaptive vector banner -->
+  <img src="./assets/banner.svg" alt="Subharup Biswas Header Banner" width="100%" />
+
+</div>
 
 ---
 
-### 📊 Real-Time Profile Metrics *(Self-Generated Native Vectors)*
+### 📊 Real-Time Performance & Metrics *(Locally Generated SVGs)*
 
 <p align="center">
   <img src="./assets/stats.svg" alt="Subharup Stats" height="160" />
@@ -15,21 +17,13 @@ Computer Science Engineering student specializing in production-grade web applic
 ---
 
 <!-- AUTO-SUMMARY:START -->
-
-Gemini API Error: 404
-
+<!-- Automated AI synthesis of repositories, dynamic technical arsenal matrix, and project digest will be injected here -->
 <!-- AUTO-SUMMARY:END -->
 
 ---
 
-## ⚡ Technical Arsenal
+### 📬 Connect & Collaborate
 
-* **Languages:** TypeScript (Strict Mode), JavaScript (ES6+), C++, SQL, Bash
-* **Frameworks & Core:** Next.js (App Router + Turbopack), React, TailwindCSS
-* **Systems & Tools:** Linux (Ubuntu Server), Docker, Wireshark, Git, GitHub Actions
-
----
-
-### 📬 Connect
-- **GitHub:** [github.com/SubharupBiswas](https://github.com/SubharupBiswas)
-- **LinkedIn:** [linkedin.com/in/subharupbiswas/](https://www.linkedin.com/in/subharupbiswas/)
+- **LinkedIn:** [linkedin.com/in/subharupbiswas](https://linkedin.com/in/subharupbiswas)
+- **Email:** [contact@subharup.com](mailto:contact@subharup.com)
+- **Portfolio:** [subharup.com](https://subharup.com)

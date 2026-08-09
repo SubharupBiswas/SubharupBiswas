@@ -2,8 +2,8 @@ name: Auto-Update Profile & Vector Stats
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Every Sunday at midnight
-  workflow_dispatch: # Allows manual trigger anytime from GitHub UI
+    - cron: '0 0 * * 0' # Automatically runs every Sunday at midnight
+  workflow_dispatch: # Enables manual one-click updates from GitHub Actions tab
 
 jobs:
   build-and-update:
@@ -25,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Fetch Repos, Draw SVGs & Query Gemini
+      - name: Fetch Repos, Render SVGs & Query Gemini
         env:
           GITHUB_USERNAME: ${{ github.repository_owner }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
