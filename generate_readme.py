@@ -32,7 +32,7 @@ def fetch_readme_content(username, repo_name, default_branch, token):
     res_master = requests.get(raw_url_master, headers=headers)
     return res_master.text[:2000] if res_master.status_code == 200 else ""
 
-def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model="Gemini Flash"):
+def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model="Gemini 3.6 Flash"):
     # CSS Styles for Dynamic GitHub Light/Dark Mode Adaptation
     svg_theme_css = """
     <style>
@@ -114,7 +114,11 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
         f.write(languages_svg)
 
 def generate_ai_summary(repo_data, api_key):
+    # Gemini 3.6 Flash set as top priority
     models = [
+        ("gemini-3.6-flash", "Gemini 3.6 Flash"),
+        ("gemini-3.5-flash", "Gemini 3.5 Flash"),
+        ("gemini-3-flash-preview", "Gemini 3 Flash"),
         ("gemini-2.5-flash", "Gemini 2.5 Flash"),
         ("gemini-2.0-flash", "Gemini 2.0 Flash")
     ]
@@ -145,16 +149,17 @@ Section 2: "### 🚀 Automated Repository Digest"
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
     for model_id, model_label in models:
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
-        res = requests.post(url, json=payload)
-        
-        if res.status_code == 200:
-            try:
+        url = f"[https://generativelanguage.googleapis.com/v1beta/models/](https://generativelanguage.googleapis.com/v1beta/models/){model_id}:generateContent?key={api_key}"
+        try:
+            res = requests.post(url, json=payload, timeout=15)
+            if res.status_code == 200:
                 summary_text = res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
                 print(f"Successfully generated summary using model: {model_id}")
                 return summary_text, model_label
-            except Exception:
-                continue
+            else:
+                print(f"Model {model_id} returned HTTP status {res.status_code}: {res.text}")
+        except Exception as e:
+            print(f"Failed attempt for model {model_id}: {e}")
 
     return "AI Summary temporarily unavailable.", "Gemini Flash"
 
@@ -218,4 +223,4 @@ if __name__ == "__main__":
     
     # Update README
     update_readme(summary)
-    print("Execution complete. Native SVGs (banner, stats, languages) and dynamic README updated.")
+    print("Execution complete. Native SVGs and dynamic README updated.")
