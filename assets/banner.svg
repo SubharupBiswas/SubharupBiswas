@@ -1,0 +1,23 @@
+<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  
+    <style>
+      .card-bg { fill: #ffffff; stroke: #d0d7de; }
+      .card-title { fill: #0969da; }
+      .card-text { fill: #1f2328; }
+      .card-subtext { fill: #656d76; }
+      .divider { stroke: #d0d7de; }
+      .bar-bg { fill: #eef1f4; }
+      @media (prefers-color-scheme: dark) {
+        .card-bg { fill: #0d1117; stroke: #30363d; }
+        .card-title { fill: #58a6ff; }
+        .card-text { fill: #c9d1d9; }
+        .card-subtext { fill: #8b949e; }
+        .divider { stroke: #21262d; }
+        .bar-bg { fill: #21262d; }
+      }
+    </style>
+    
+  <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
+  <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
+  <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">Full-Stack Software Engineer &amp; Systems Performance Specialist</text>
+</svg>

@@ -17,7 +17,9 @@
 ---
 
 <!-- AUTO-SUMMARY:START -->
-<!-- Automated AI synthesis of repositories, dynamic technical arsenal matrix, and project digest will be injected here -->
+
+AI Summary temporarily unavailable.
+
 <!-- AUTO-SUMMARY:END -->
 
 ---
