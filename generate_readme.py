@@ -147,8 +147,11 @@ Section 2: "### 🚀 Automated Repository Digest"
 
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
+    # Constructed via dynamic parts to prevent rich text linkification
+    base_domain = "generativelanguage" + "." + "googleapis" + "." + "com"
+
     for model_id, model_label in models:
-        url = f"[https://generativelanguage.googleapis.com/v1beta/models/](https://generativelanguage.googleapis.com/v1beta/models/){model_id}:generateContent?key={api_key}"
+        url = f"https://{base_domain}/v1beta/models/{model_id}:generateContent?key={api_key}"
         try:
             res = requests.post(url, json=payload, timeout=20)
             if res.status_code == 200:
@@ -156,15 +159,12 @@ Section 2: "### 🚀 Automated Repository Digest"
                 candidates = data.get("candidates", [])
                 if candidates:
                     parts = candidates[0].get("content", {}).get("parts", [])
-                    # Safely collect text from all parts (skipping 'thought' blocks if present)
                     text_content = "".join([p.get("text", "") for p in parts if "text" in p]).strip()
                     if text_content:
                         print(f"Successfully generated summary using model: {model_id}")
                         return text_content, model_label
                     else:
-                        print(f"Model {model_id} returned 200 but text content was empty: {data}")
-                else:
-                    print(f"Model {model_id} returned 200 but no candidates were found: {data}")
+                        print(f"Model {model_id} returned 200 but text content was empty.")
             else:
                 print(f"Model {model_id} failed with status {res.status_code}: {res.text}")
         except Exception as e:
