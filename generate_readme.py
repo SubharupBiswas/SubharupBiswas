@@ -114,11 +114,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
         f.write(languages_svg)
 
 def generate_ai_summary(repo_data, api_key):
-    # Priorities using exact model IDs from Google AI Studio
     models = [
-        ("gemini-3.6-flash", "Gemini 3.6 Flash"),
-        ("gemini-3.5-flash", "Gemini 3.5 Flash"),
-        ("gemini-3-flash-preview", "Gemini 3 Flash"),
         ("gemini-2.5-flash", "Gemini 2.5 Flash"),
         ("gemini-2.0-flash", "Gemini 2.0 Flash")
     ]
