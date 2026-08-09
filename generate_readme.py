@@ -114,7 +114,6 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
         f.write(languages_svg)
 
 def generate_ai_summary(repo_data, api_key):
-    # Gemini 3.6 Flash set as top priority
     models = [
         ("gemini-3.6-flash", "Gemini 3.6 Flash"),
         ("gemini-3.5-flash", "Gemini 3.5 Flash"),
@@ -151,15 +150,25 @@ Section 2: "### 🚀 Automated Repository Digest"
     for model_id, model_label in models:
         url = f"[https://generativelanguage.googleapis.com/v1beta/models/](https://generativelanguage.googleapis.com/v1beta/models/){model_id}:generateContent?key={api_key}"
         try:
-            res = requests.post(url, json=payload, timeout=15)
+            res = requests.post(url, json=payload, timeout=20)
             if res.status_code == 200:
-                summary_text = res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-                print(f"Successfully generated summary using model: {model_id}")
-                return summary_text, model_label
+                data = res.json()
+                candidates = data.get("candidates", [])
+                if candidates:
+                    parts = candidates[0].get("content", {}).get("parts", [])
+                    # Safely collect text from all parts (skipping 'thought' blocks if present)
+                    text_content = "".join([p.get("text", "") for p in parts if "text" in p]).strip()
+                    if text_content:
+                        print(f"Successfully generated summary using model: {model_id}")
+                        return text_content, model_label
+                    else:
+                        print(f"Model {model_id} returned 200 but text content was empty: {data}")
+                else:
+                    print(f"Model {model_id} returned 200 but no candidates were found: {data}")
             else:
-                print(f"Model {model_id} returned HTTP status {res.status_code}: {res.text}")
+                print(f"Model {model_id} failed with status {res.status_code}: {res.text}")
         except Exception as e:
-            print(f"Failed attempt for model {model_id}: {e}")
+            print(f"Exception while calling {model_id}: {e}")
 
     return "AI Summary temporarily unavailable.", "Gemini Flash"
 
