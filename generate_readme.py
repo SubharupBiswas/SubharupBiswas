@@ -145,7 +145,7 @@ Section 2: "### 🚀 Automated Repository Digest"
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
     for model_id, model_label in models:
-        url = f"[https://generativelanguage.googleapis.com/v1beta/models/](https://generativelanguage.googleapis.com/v1beta/models/){model_id}:generateContent?key={api_key}"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
         res = requests.post(url, json=payload)
         
         if res.status_code == 200:
