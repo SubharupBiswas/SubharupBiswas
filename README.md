@@ -22,34 +22,23 @@
 
 | Area | Detected Technologies & Frameworks |
 | :--- | :--- |
-| **Languages** | TypeScript, Python, JavaScript, SQL, HTML5, CSS3 |
-| **Frontend & UI** | Next.js 16 (App Router / Turbopack), React 19, Tailwind CSS v4, Vite, Framer Motion, Vanilla JS |
-| **Backend & Systems** | Cloudflare Workers (Edge Serverless), Flask, Prisma ORM, Cloudflare D1 (SQLite Edge), PostgreSQL, SQLite3 |
-| **DevOps & Security** | Cloudflare Pages, Extended Detection & Response (XDR), Edge LLM Integration (Workers AI Llama 3.1, Gemini, Groq), Webhook Alert Dispatchers, Network CIDR/VLSM Engine |
+| **Languages** | TypeScript, Python, JavaScript (ES6+), HTML5, CSS3, SQL |
+| **Frontend & UI** | React 19, Next.js 16 (App Router & Turbopack), Tailwind CSS v4, Vite, Framer Motion |
+| **Backend & Systems** | Node.js, Flask (Python), Cloudflare Workers (Edge Serverless), Prisma ORM, PostgreSQL, SQLite / Cloudflare D1 |
+| **DevOps & Security** | Cloudflare Pages & Workers, Edge LLM Inference (Workers AI, Llama 3.1, Gemini, Groq), XDR Security Scanning, Network Auditing, WCAG AA/AAA Accessibility |
 
 ---
 
 ### 🚀 Automated Repository Digest
 
-Subharup Biswas demonstrates an advanced, multidisciplinary software engineering profile centered around edge computing, resilient serverless architectures, cybersecurity operations, and automated AI processing pipelines. Across his repositories, a common architectural theme emerges: pairing state-of-the-art frontend technology stacks (Next.js 16, React 19, Tailwind CSS v4) with ultra-low-latency edge execution runtimes (Cloudflare Workers, D1) or modular Python engines. He frequently implements dynamic fallback patterns—such as multi-provider AI waterfalls combining Gemini, OmniRoute, and Groq—to deliver intelligent automation without introducing single points of failure or unsustainable API costs.
+Subharup Biswas demonstrates a robust technical focus across edge-native system architectures, developer instrumentation SaaS, cybersecurity tooling, and high-performance web engineering. A consistent pattern in Subharup's work is leveraging cutting-edge web technologies—notably React 19, Next.js 16, TypeScript, and Tailwind CSS v4—paired with edge computing platforms like Cloudflare Workers and Pages. His engineering portfolio highlights a strong capability to integrate serverless architectures with localized AI/LLM forecasting and multi-provider decision waterfalls to deliver real-time operational platforms at zero or low infrastructure cost.
 
-His technical capabilities extend beyond standard full-stack web applications into deep systems and infrastructure tooling. From constructing enterprise-grade Extended Detection and Response (XDR) platforms equipped with standardized timezone localization and malware signature analysis, to engineering high-performance IPv4 subnet calculators that achieve perfect 100 Lighthouse metrics across all operational categories, his portfolio showcases a focus on optimization, accessibility (WCAG compliance), and production-grade software delivery.
+Beyond modern web application engineering, Subharup showcases expertise in systems security, low-level network utility computation, and observability systems. Projects range from Extended Detection and Response (XDR) security engines written in modular Python to sub-second IPv4/VLSM network calculators optimized for maximum PageSpeed scores and WCAG compliance. Across all repositories, there is a clear emphasis on developer experience, production-grade logging, edge-rendering optimizations, and comprehensive documentation.
 
-* **[RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI)**
-  * **Edge Architecture**: Built as a 100% serverless edge FX tracking pipeline running on Cloudflare Workers backed by Cloudflare D1 SQLite storage.
-  * **AI & Dispatch Engine**: Features on-edge LLM forecasting using Workers AI (Llama 3.1 8B) with mathematical fallbacks, paired with multi-channel hourly Telegram and Discord alert dispatches.
-
-* **[pulseping](https://github.com/SubharupBiswas/pulseping)**
-  * **Full-Stack Monitoring**: Developer-first uptime SaaS constructed with Next.js 16 (Turbopack), React 19, Prisma ORM, and PostgreSQL local connection pooling.
-  * **AI Root Cause Analysis**: Implements a cost-controlled multi-provider AI waterfall (Gemini → OmniRoute → Groq) for instant failure diagnosis and public status board serving.
-
-* **[VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS)**
-  * **Security Operations (XDR)**: Modular Python/Flask XDR security control center featuring network vulnerability scanning, threat intelligence lookups, and OS auditing.
-  * **Localization & Integrity**: Features unified backend audit logging and database synchronization locked explicitly to Asia/Kolkata (IST) time representation.
-
-* **[cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator)**
-  * **Core Engineering**: Next.js 16 and TypeScript IPv4 engine providing binary stream topology visualizers and VLSM network planning.
-  * **Performance Metrics**: Designed for accessibility and speed, scoring 100/100 across Mobile/Desktop Performance, Accessibility, Best Practices, and SEO on Google PageSpeed Insights.
+* [RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI) — Real-time serverless edge FX tracker and 30-day rate forecasting engine deployed on Cloudflare Workers, using Workers AI (Llama 3.1 8B) for automated analytics and multi-channel notifications (Telegram/Discord).
+* [pulseping](https://github.com/SubharupBiswas/pulseping) — Production-grade Next.js 16 uptime monitoring SaaS utilizing Prisma ORM and PostgreSQL, featuring an automated multi-provider AI root cause analysis engine (Gemini → OmniRoute → Groq waterfall).
+* [VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS) — Enterprise-style Extended Detection and Response (XDR) platform built in Python and Flask for local network vulnerability scanning, threat intelligence lookups, and explicit Asia/Kolkata audit logging.
+* [cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator) — High-speed IPv4 CIDR subnet engine and visual VLSM topology planner delivering sub-second binary calculations with 100/100 Lighthouse performance metrics.
 
 <!-- AUTO-SUMMARY:END -->
 
