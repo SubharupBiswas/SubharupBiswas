@@ -22,23 +22,37 @@
 
 | Area | Detected Technologies & Frameworks |
 | :--- | :--- |
-| **Languages** | TypeScript, Python, JavaScript (ES6+), HTML5, CSS3, SQL |
-| **Frontend & UI** | React 19, Next.js 16 (App Router & Turbopack), Tailwind CSS v4, Vite, Framer Motion |
-| **Backend & Systems** | Node.js, Flask (Python), Cloudflare Workers (Edge Serverless), Prisma ORM, PostgreSQL, SQLite / Cloudflare D1 |
-| **DevOps & Security** | Cloudflare Pages & Workers, Edge LLM Inference (Workers AI, Llama 3.1, Gemini, Groq), XDR Security Scanning, Network Auditing, WCAG AA/AAA Accessibility |
+| **Languages** | TypeScript, Python, JavaScript, HTML5, CSS3, SQL |
+| **Frontend & UI** | React 19, Next.js 16 (App Router / Turbopack), Tailwind CSS v4, Vite 8, Framer Motion, Vanilla JS |
+| **Backend & Systems** | Cloudflare Workers, Flask (Python), Prisma ORM, PostgreSQL, Cloudflare D1 (SQLite), REST APIs |
+| **DevOps & Security** | Cloudflare Pages, Edge Computing, XDR/Security Auditing, Workers AI (Llama 3.1), Multi-LLM Routing (Gemini, Groq) |
 
 ---
 
 ### 🚀 Automated Repository Digest
 
-Subharup Biswas demonstrates a robust technical focus across edge-native system architectures, developer instrumentation SaaS, cybersecurity tooling, and high-performance web engineering. A consistent pattern in Subharup's work is leveraging cutting-edge web technologies—notably React 19, Next.js 16, TypeScript, and Tailwind CSS v4—paired with edge computing platforms like Cloudflare Workers and Pages. His engineering portfolio highlights a strong capability to integrate serverless architectures with localized AI/LLM forecasting and multi-provider decision waterfalls to deliver real-time operational platforms at zero or low infrastructure cost.
+Subharup Biswas demonstrates a strong background in modern full-stack web development, edge computing, cybersecurity platforms, and developer tooling. His codebase showcases modern web technologies such as React 19, Next.js 16, and Tailwind CSS v4, paired with high-performance serverless backends like Cloudflare Workers and PostgreSQL/Prisma. Performance, edge rendering, and user experience are key priorities across his projects, evidenced by perfect Lighthouse scores, zero-downtime static site generation, and accessible design patterns.
 
-Beyond modern web application engineering, Subharup showcases expertise in systems security, low-level network utility computation, and observability systems. Projects range from Extended Detection and Response (XDR) security engines written in modular Python to sub-second IPv4/VLSM network calculators optimized for maximum PageSpeed scores and WCAG compliance. Across all repositories, there is a clear emphasis on developer experience, production-grade logging, edge-rendering optimizations, and comprehensive documentation.
+Beyond standard web engineering, his work extends into specialized systems engineering, network calculation tools, and AI infrastructure. His projects feature complex multi-provider LLM pipelines (such as Gemini-to-Groq fallback cascades), automated edge-level FX forecasting engines, modular security platforms (XDR) with backend auditing, and low-latency network subnet tools. The repositories consistently follow enterprise software practices, including strict TypeScript implementations, explicit localization handling, and comprehensive README documentation.
 
-* [RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI) — Real-time serverless edge FX tracker and 30-day rate forecasting engine deployed on Cloudflare Workers, using Workers AI (Llama 3.1 8B) for automated analytics and multi-channel notifications (Telegram/Discord).
-* [pulseping](https://github.com/SubharupBiswas/pulseping) — Production-grade Next.js 16 uptime monitoring SaaS utilizing Prisma ORM and PostgreSQL, featuring an automated multi-provider AI root cause analysis engine (Gemini → OmniRoute → Groq waterfall).
-* [VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS) — Enterprise-style Extended Detection and Response (XDR) platform built in Python and Flask for local network vulnerability scanning, threat intelligence lookups, and explicit Asia/Kolkata audit logging.
-* [cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator) — High-speed IPv4 CIDR subnet engine and visual VLSM topology planner delivering sub-second binary calculations with 100/100 Lighthouse performance metrics.
+#### Featured Repositories
+
+*   [**RupeeCheck-AI**](https://github.com/SubharupBiswas/RupeeCheck-AI)
+    *   Edge-deployed USD/INR spot exchange tracker powered by Cloudflare Workers and Cloudflare D1 (SQLite).
+    *   Features an on-device LLM forecasting engine using Workers AI (Llama 3.1 8B) with deterministic mathematical fallback mechanisms.
+    *   Includes automated multi-channel dispatchers broadcasting market summaries to Telegram and Discord.
+*   [**pulseping**](https://github.com/SubharupBiswas/pulseping)
+    *   Production-grade uptime monitoring SaaS built on Next.js 16, React 19, Prisma ORM, and PostgreSQL.
+    *   Automates root-cause failure analysis utilizing a multi-provider AI waterfall sequence (Gemini → OmniRoute → Groq) to control API cost overhead.
+    *   Serves low-latency public status boards and inverse background job heartbeat monitoring.
+*   [**VULNEXUS**](https://github.com/SubharupBiswas/VULNEXUS)
+    *   Extended Detection and Response (XDR) security platform built with Python and Flask.
+    *   Executes local network vulnerability scans, malware signature analysis, and OS configuration audits via an interactive Web SOC interface.
+    *   Features explicit backend database hooks and audit logs localized to India Standard Time (Asia/Kolkata).
+*   [**cidr-subnet-calculator**](https://github.com/SubharupBiswas/cidr-subnet-calculator)
+    *   High-performance IPv4 CIDR calculation engine, binary stream visualizer, and VLSM planner using Next.js 16 and React 19.
+    *   Achieves 100/100 performance, accessibility, best practices, and SEO scores on Google Lighthouse.
+    *   Fully WCAG AA/AAA compliant interface with responsive data tables and embeddable web widgets.
 
 <!-- AUTO-SUMMARY:END -->
 
