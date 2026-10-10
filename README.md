@@ -22,39 +22,40 @@
 
 | Area | Detected Technologies & Frameworks |
 | :--- | :--- |
-| **Languages** | TypeScript, Python, JavaScript, SQL, HTML5, CSS3 |
-| **Frontend & UI** | React 19, Next.js 16 (App Router & Turbopack), Tailwind CSS v4, Framer Motion, Vite 8 |
-| **Backend & Systems** | Node.js, Flask, Prisma ORM, Cloudflare Workers, Workers AI (Meta Llama 3.1 8B), PostgreSQL (TCP Connection Pool), Cloudflare D1 (SQLite), SQLite3, RESTful APIs |
-| **DevOps & Security** | Cloudflare Pages, Edge Computing & Prerendering, Extended Detection & Response (XDR), Network Vulnerability Scanning, Threat Intelligence Ingestion, Real-Time Monitoring & Webhook Alerting (Discord/Telegram) |
+| **Languages** | TypeScript, Python, JavaScript (ES6+), HTML5, CSS3, SQL |
+| **Frontend & UI** | React 19, Next.js 16 (App Router, Turbopack), Tailwind CSS v4, Framer Motion, Vite 8, Semantic HTML |
+| **Backend & Systems** | Node.js, Prisma ORM, Flask, Cloudflare Workers, Cloudflare D1 (SQLite), PostgreSQL (TCP Connection Pooling), SQLite3, Llama 3.1 8B (Workers AI) |
+| **DevOps & Security** | Cloudflare Pages, Edge Computing, Extended Detection & Response (XDR), Threat Intelligence Lookup, Root-Cause Analysis Fallbacks (Gemini/Groq), Automated Alerting (Telegram/Discord APIs) |
 
 ---
 
 ### 🚀 Automated Repository Digest
 
-Subharup Biswas's repositories demonstrate an advanced software engineering profile focused on high-performance edge architectures, modern full-stack systems, and cybersecurity tooling. Across projects, there is a consistent adoption of bleeding-edge web standards—most notably Next.js 16, React 19, and Tailwind CSS v4—paired with distributed, zero-maintenance backends like Cloudflare Workers and D1 SQLite. System resilience and cost efficiency are recurring themes, evidenced by intelligent AI orchestration patterns (such as multi-model LLM fallback waterfalls) and sub-second edge computation designed to operate sustainably within serverless free tiers.
+Subharup Biswas demonstrates an engineering focus centered on edge-native serverless systems, resilient distributed architectures, and systems-level network tooling. Across the portfolio, projects consistently feature modern foundational frameworks—notably React 19, Next.js 16, and modern Tailwind CSS v4—coupled with edge computing layers like Cloudflare Workers and D1 SQLite. The repositories emphasize production hardening, sub-second latency, deterministic failovers (such as multi-LLM waterfall architectures), and strict adherence to web accessibility, WCAG standards, and clean API design.
 
-Beyond standard web development, the portfolio showcases deep domain expertise in networking fundamentals, distributed observability, and security operations center (SOC) tooling. Biswas engineers practical systems solutions that range from bitwise binary network visualizers to automated Extended Detection and Response (XDR) vulnerability platforms and distributed monitoring agents. Each project emphasizes high accessibility, strict typing, precise localization handling, and flawless Lighthouse-grade performance.
+Beyond user interfaces, the codebases reflect strong domain knowledge in network topologies, real-time telemetry, and cybersecurity operations. From building bitwise binary subnet calculation engines to engineering Python-driven XDR vulnerability scanners and automated uptime heartbeats, Subharup's work emphasizes deterministic reliability, operational visibility, and local timezone telemetry without inflating overhead or infrastructure costs.
 
 #### Featured Projects
 
-* **[pulseping](https://github.com/SubharupBiswas/pulseping)** — Production-Grade Observability & Incident RCA SaaS
-  * **Core Stack**: Next.js 16 (Turbopack), React 19, Prisma ORM, PostgreSQL (Local TCP Pool), Tailwind CSS v4.
-  * **Architectural Highlights**: Tracks real-time API latency and inverse background heartbeats; features an automated multi-provider AI root-cause analysis waterfall (Gemini → OmniRoute → Groq) to mitigate provider failure while avoiding API cost spikes.
-  * **Output**: Delivers sub-second response times for public status pages with zero-downtime architecture.
+* **[PulsePing](https://github.com/SubharupBiswas/pulseping)**
+  * Enterprise-grade serverless uptime, latency tracking, and background job heartbeat platform.
+  * Powered by Next.js 16 (Turbopack), Prisma ORM, and local TCP connection-pooled PostgreSQL.
+  * Features multi-model AI root-cause analysis (Gemini → OmniRoute → Groq waterfall fallback) and zero-downtime public status boards.
 
-* **[RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI)** — 24/7 Edge FX Tracker & LLM Forecasting Engine
-  * **Core Stack**: Cloudflare Workers, Cloudflare D1 (SQLite), Workers AI (Llama 3.1 8B), React 19, Vite, Tailwind CSS v4.
-  * **Architectural Highlights**: Fully serverless edge architecture running 24/7 USD/INR spot exchange rate polling, 30-day forecast generation using edge LLMs combined with deterministic math fallbacks, and multi-channel notification dispatch to Telegram and Discord.
+* **[RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI)**
+  * 24/7 edge-based USD/INR foreign exchange rate tracker and 30-day forecasting engine.
+  * Hosted entirely on Cloudflare Workers, Cloudflare D1 (SQLite), Vite, and Meta Llama 3.1 8B via Workers AI.
+  * Employs deterministic mathematical fallback forecasting and automated dispatch pipelines to Telegram and Discord.
 
-* **[VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS)** — Extended Detection and Response (XDR) Platform
-  * **Core Stack**: Python 3.8+, Flask, SQLite3, Vanilla JavaScript, CSS3.
-  * **Architectural Highlights**: Automated security platform delivering local network vulnerability scanning, threat intelligence feeds, malware signature inspection, and OS configuration audits.
-  * **Operational Engineering**: Implements unified India Standard Time (IST) logging throughout backend hooks, database transactions, and client-side clocks to eliminate timezone conversion bugs during incident response.
+* **[cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator)**
+  * High-performance IPv4 CIDR subnet calculation engine and binary stream topology planner (`subnetmask.tech`).
+  * Built using Next.js 16, React 19, and Tailwind CSS v4, optimized for sub-millisecond network computation.
+  * Boasts 100/100 Lighthouse performance metrics across mobile and desktop with full WCAG AA/AAA compliance.
 
-* **[cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator)** — High-Performance IPv4 CIDR Engine & VLSM Planner
-  * **Core Stack**: Next.js 16, React 19, TypeScript, Tailwind CSS v4.
-  * **Architectural Highlights**: Calculates and models binary stream network topologies and Variable Length Subnet Masking (VLSM) in real time.
-  * **Quality Standards**: Engineered to achieve perfect 100/100 Lighthouse metrics across Mobile/Desktop Performance, Accessibility, Best Practices, and SEO with WCAG AA/AAA compliance.
+* **[VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS)**
+  * Extended Detection and Response (XDR) cybersecurity control plane designed for endpoint and network security.
+  * Implemented in modular Python with Flask and SQLite3 for local network audits, threat intelligence lookup, and malware signature checks.
+  * Features unified Asia/Kolkata (IST) database audit trails and live SOC configuration auditing.
 
 <!-- AUTO-SUMMARY:END -->
 
