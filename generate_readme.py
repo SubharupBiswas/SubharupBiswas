@@ -7,7 +7,6 @@ GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 GITHUB_TOKEN = os.getenv("GH_PAT") or os.getenv("GITHUB_TOKEN")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-# Ensure local assets folder exists
 os.makedirs("assets", exist_ok=True)
 
 def fetch_repositories(username, token):
@@ -53,8 +52,8 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     </style>
     """
 
-    # 1. Header Banner Card (SVG)
-    banner_svg = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    # 1. Header Banner Card (Standardized viewBox for 100% responsiveness)
+    banner_svg = f'''<svg width="100%" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   {svg_theme_css}
   <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
   <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
@@ -64,7 +63,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     with open("assets/banner.svg", "w", encoding="utf-8") as f:
         f.write(banner_svg)
 
-    # 2. Main Performance Card (SVG)
+    # 2. Main Performance Card
     stats_svg = f'''<svg width="380" height="160" viewBox="0 0 380 160" fill="none" xmlns="http://www.w3.org/2000/svg">
   {svg_theme_css}
   <rect class="card-bg" width="380" height="160" rx="12" stroke-width="1.5"/>
@@ -84,7 +83,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     with open("assets/stats.svg", "w", encoding="utf-8") as f:
         f.write(stats_svg)
 
-    # 3. Languages Distribution Card (SVG)
+    # 3. Languages Distribution Card
     total_lang_repos = sum(lang_counts.values()) or 1
     sorted_langs = sorted(lang_counts.items(), key=lambda x: x[1], reverse=True)[:4]
     colors = ["#0969da", "#d4a72c", "#cf222e", "#1a7f37", "#8250df"]
@@ -114,7 +113,6 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
         f.write(languages_svg)
 
 def generate_ai_summary(repo_data, api_key):
-    # Tier-1 production and flagship flash model lineup
     models = [
         ("gemini-3.8-flash", "Gemini 3.8 Flash"),
         ("gemini-3.6-flash", "Gemini 3.6 Flash"),
@@ -154,14 +152,14 @@ Section 2: "### 🚀 Automated Repository Digest"
     }
     
     base_domain = "generativelanguage" + "." + "googleapis" + "." + "com"
+    backoff_intervals = [4, 8]  # Progressive delay for 503 high-demand spikes
 
     for model_id, model_label in models:
         url = f"https://{base_domain}/v1beta/models/{model_id}:generateContent?key={api_key}"
         
-        for attempt in range(2):
+        for attempt in range(len(backoff_intervals) + 1):
             try:
-                # 65-second timeout gives Gemini 3.8 Flash ample generation time
-                res = requests.post(url, json=payload, timeout=65)
+                res = requests.post(url, json=payload, timeout=60)
                 
                 if res.status_code == 200:
                     data = res.json()
@@ -172,17 +170,19 @@ Section 2: "### 🚀 Automated Repository Digest"
                         if text_content:
                             print(f"Successfully generated summary using model: {model_id}")
                             return text_content, model_label
-                elif res.status_code == 503 and attempt == 0:
-                    print(f"Model {model_id} hit 503 (high demand). Retrying in 2 seconds...")
-                    time.sleep(2)
+                            
+                elif res.status_code == 503 and attempt < len(backoff_intervals):
+                    delay = backoff_intervals[attempt]
+                    print(f"Model {model_id} hit 503 (high demand). Retrying in {delay}s...")
+                    time.sleep(delay)
                     continue
                 else:
                     print(f"Model {model_id} attempt {attempt+1} failed with status {res.status_code}: {res.text}")
                     break
             except Exception as e:
                 print(f"Exception while calling {model_id} on attempt {attempt+1}: {e}")
-                if attempt == 0:
-                    time.sleep(2)
+                if attempt < len(backoff_intervals):
+                    time.sleep(backoff_intervals[attempt])
                     continue
                 break
 
