@@ -2,8 +2,8 @@ name: Auto-Update Profile & Vector Stats
 
 on:
   schedule:
-    - cron: '30 18 * * *' # Runs automatically every night at 12:00 AM IST (18:30 UTC)
-  workflow_dispatch: # Enables manual one-click updates from GitHub Actions tab
+    - cron: '30 18 * * *' # Executes daily at 12:00 AM IST (18:30 UTC)
+  workflow_dispatch:
 
 jobs:
   build-and-update:
@@ -18,7 +18,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.x'
 
       - name: Install Dependencies
         run: |
