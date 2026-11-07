@@ -52,13 +52,16 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     </style>
     """
 
-    # 1. Header Banner Card (Explicit width="800" ensures Camo proxy renders reliably)
-    banner_svg = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    # 1. Header Banner Card (Strict XML-safe entity encoding)
+    raw_banner = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   {svg_theme_css}
   <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
   <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
   <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">Full-Stack Software Engineer & Systems Performance Specialist</text>
 </svg>'''
+
+    # Enforce XML ampersand compliance
+    banner_svg = raw_banner.replace(" & ", " & ")
 
     with open("assets/banner.svg", "w", encoding="utf-8") as f:
         f.write(banner_svg)
