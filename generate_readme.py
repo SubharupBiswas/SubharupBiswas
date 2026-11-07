@@ -58,7 +58,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
   {svg_theme_css}
   <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
   <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
-  <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">Full-Stack Software Engineer &amp; Systems Performance Specialist</text>
+  <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">Full-Stack Software Engineer & Systems Performance Specialist</text>
 </svg>'''
 
     with open("assets/banner.svg", "w", encoding="utf-8") as f:
@@ -114,6 +114,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
         f.write(languages_svg)
 
 def generate_ai_summary(repo_data, api_key):
+    # Tier-1 production and flagship flash model lineup
     models = [
         ("gemini-3.8-flash", "Gemini 3.8 Flash"),
         ("gemini-3.6-flash", "Gemini 3.6 Flash"),
@@ -144,7 +145,14 @@ Section 2: "### 🚀 Automated Repository Digest"
 2. List up to 4 featured public repositories with markdown links and bullet points highlighting key architectural features derived from their READMEs.
 """
 
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {
+            "temperature": 0.2,
+            "maxOutputTokens": 2500
+        }
+    }
+    
     base_domain = "generativelanguage" + "." + "googleapis" + "." + "com"
 
     for model_id, model_label in models:
@@ -152,7 +160,8 @@ Section 2: "### 🚀 Automated Repository Digest"
         
         for attempt in range(2):
             try:
-                res = requests.post(url, json=payload, timeout=35)
+                # 65-second timeout gives Gemini 3.8 Flash ample generation time
+                res = requests.post(url, json=payload, timeout=65)
                 
                 if res.status_code == 200:
                     data = res.json()
