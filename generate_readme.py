@@ -32,6 +32,10 @@ def fetch_readme_content(username, repo_name, default_branch, token):
     res_master = requests.get(raw_url_master, headers=headers)
     return res_master.text[:2000] if res_master.status_code == 200 else ""
 
+def sanitize_xml(svg_text):
+    # Regex ensures any bare '&' becomes '&' without double-encoding existing entities
+    return re.sub(r'&(?!(amp|lt|gt|apos|quot);)', chr(38) + "amp;", svg_text)
+
 def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model="Gemini 3.8 Flash"):
     svg_theme_css = """
     <style>
@@ -52,19 +56,20 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     </style>
     """
 
-    # 1. Header Banner Card (Strict XML-safe entity encoding)
-    raw_banner = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    # Programmatic XML entity injection prevents chat copy-paste corruption
+    xml_amp = chr(38) + "amp;"
+    subtitle_text = f"Full-Stack Software Engineer {xml_amp} Systems Performance Specialist"
+
+    # 1. Header Banner Card
+    banner_svg = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   {svg_theme_css}
   <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
   <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
-  <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">Full-Stack Software Engineer & Systems Performance Specialist</text>
+  <text class="card-text" x="400" y="82" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="500" font-size="14" text-anchor="middle">{subtitle_text}</text>
 </svg>'''
 
-    # Enforce XML ampersand compliance
-    banner_svg = raw_banner.replace(" & ", " & ")
-
     with open("assets/banner.svg", "w", encoding="utf-8") as f:
-        f.write(banner_svg)
+        f.write(sanitize_xml(banner_svg))
 
     # 2. Main Performance Card
     stats_svg = f'''<svg width="380" height="160" viewBox="0 0 380 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +89,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
 </svg>'''
 
     with open("assets/stats.svg", "w", encoding="utf-8") as f:
-        f.write(stats_svg)
+        f.write(sanitize_xml(stats_svg))
 
     # 3. Languages Distribution Card
     total_lang_repos = sum(lang_counts.values()) or 1
@@ -113,7 +118,7 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
 </svg>'''
 
     with open("assets/languages.svg", "w", encoding="utf-8") as f:
-        f.write(languages_svg)
+        f.write(sanitize_xml(languages_svg))
 
 def generate_ai_summary(repo_data, api_key):
     models = [
