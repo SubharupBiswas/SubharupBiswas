@@ -52,8 +52,8 @@ def generate_local_svg_stats(total_repos, total_stars, lang_counts, active_model
     </style>
     """
 
-    # 1. Header Banner Card (Standardized viewBox for 100% responsiveness)
-    banner_svg = f'''<svg width="100%" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    # 1. Header Banner Card (Explicit width="800" ensures Camo proxy renders reliably)
+    banner_svg = f'''<svg width="800" height="120" viewBox="0 0 800 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   {svg_theme_css}
   <rect class="card-bg" width="800" height="120" rx="12" stroke-width="1.5"/>
   <text class="card-title" x="400" y="52" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-weight="700" font-size="26" text-anchor="middle">SUBHARUP BISWAS 👋</text>
@@ -152,7 +152,7 @@ Section 2: "### 🚀 Automated Repository Digest"
     }
     
     base_domain = "generativelanguage" + "." + "googleapis" + "." + "com"
-    backoff_intervals = [4, 8]  # Progressive delay for 503 high-demand spikes
+    backoff_intervals = [4, 8]
 
     for model_id, model_label in models:
         url = f"https://{base_domain}/v1beta/models/{model_id}:generateContent?key={api_key}"
