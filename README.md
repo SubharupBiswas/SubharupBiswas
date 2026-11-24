@@ -22,40 +22,36 @@
 
 | Area | Detected Technologies & Frameworks |
 | :--- | :--- |
-| **Languages** | TypeScript, Python, JavaScript (ES6+), HTML5, CSS3 |
-| **Frontend & UI** | React 19, Next.js 16 (App Router & Turbopack), Vite 8, Tailwind CSS (v4), Framer Motion |
-| **Backend & Systems** | Node.js, Flask (Python), Prisma ORM, Cloudflare Workers, Cloudflare D1 (SQLite), PostgreSQL, SQLite3 |
-| **DevOps & Security** | Cloudflare Pages, Edge Runtime Computing, Extended Detection & Response (XDR), Multi-Provider AI Pipelines (Workers AI / Llama 3.1, Gemini, Groq), RESTful APIs |
+| **Languages** | TypeScript, Python, JavaScript, HTML5, CSS3, SQL |
+| **Frontend & UI** | React 19, Next.js 16 (App Router / Turbopack), Vite, Tailwind CSS v4, Framer Motion |
+| **Backend & Systems** | Flask, Cloudflare Workers, Cloudflare D1 (SQLite), Prisma ORM, PostgreSQL, SQLite3 |
+| **DevOps & Security** | Cloudflare Pages, Edge Computing, Threat Intelligence & XDR Scanners, Workers AI (Llama 3.1 8B), Multi-LLM Waterfall Orchestration (Gemini/Groq), Webhook Alerts (Telegram/Discord) |
 
 ---
 
 ### 🚀 Automated Repository Digest
 
-Subharup Biswas demonstrates an engineering focus centered around full-stack edge computing, cybersecurity tooling, real-time observability platforms, and high-performance network utilities. Across the codebase portfolio, there is a clear preference for modern frontend architecture—utilizing Next.js 16, React 19, and Tailwind CSS v4—paired with lightweight, serverless edge compute solutions such as Cloudflare Workers, D1 SQLite, and Prisma ORM. The implementation patterns highlight advanced capabilities in building resilient multi-tier fallbacks, such as AI-assisted root cause analysis pipelines (cascading across Gemini, OmniRoute, and Groq) and edge-deployed LLM forecasting engines backed by deterministic logic.
+Subharup Biswas is a full-stack engineer and systems developer with a strong emphasis on edge computing, serverless architectures, cybersecurity tools, and modern UI engineering. Across the portfolio, key architecture patterns emerge around Next.js 16 App Router implementations, edge-deployed SQLite/D1 data stores, high-efficiency API fallbacks, and real-time operational monitoring engines.
 
-Beyond web infrastructure, the developer demonstrates deep domain awareness in computer networking and system security. Projects range from custom enterprise Extended Detection and Response (XDR) SOC consoles handling OS auditing and threat intelligence to dedicated binary-stream IPv4 CIDR topology visualizers optimized for perfect 100/100 PageSpeed scores and WCAG compliance. Detail-oriented localization practices, strict edge prerendering strategies, and clean modular backend design patterns define the overarching system architecture across the portfolio.
+The codebase demonstrates exceptional technical discipline, highlighted by performance-first designs (achieving 100/100 Lighthouse metrics), complex distributed AI fallback pipelines (such as multi-provider Gemini-to-Groq waterfalls), and domain-specific systems engineering spanning CIDR network topology visualizers to enterprise XDR cybersecurity platforms.
 
-#### Featured Projects
+#### Featured Repositories
 
-* **[pulseping](https://github.com/SubharupBiswas/pulseping)**
-  * Enterprise-grade operational monitoring SaaS built with Next.js 16 (Turbopack), React 19, Prisma ORM, and PostgreSQL.
-  * Implemented an automated multi-provider AI failure root-cause analysis pipeline leveraging a cost-optimized model waterfall (Gemini → OmniRoute → Groq).
-  * Designed for real-time endpoint latency tracking, inverse background job heartbeats, and sub-second public status boards.
+* **[PulsePing](https://github.com/SubharupBiswas/pulseping)**
+  * Enterprise-grade operational monitoring and latency tracking SaaS constructed with Next.js 16 (Turbopack), Prisma ORM, and PostgreSQL.
+  * Features multi-provider AI root cause analysis using a cost-efficient Gemini → OmniRoute → Groq waterfall pipeline and zero-downtime public status boards.
 
 * **[RupeeCheck-AI](https://github.com/SubharupBiswas/RupeeCheck-AI)**
-  * 100% serverless edge FX tracker and 30-day forecasting engine deployed on Cloudflare Workers and Cloudflare D1.
-  * Integrates edge-deployed Workers AI (Llama 3.1 8B) with deterministic mathematical fallback layers to ensure 24/7 reliability.
-  * Features automated multi-channel alert dispatching to Telegram and Discord along with high-frequency spot rate evaluation.
+  * 100% free-tier edge FX tracker and forecasting engine hosted on Cloudflare Workers with Cloudflare D1 SQLite.
+  * Deploys edge LLMs (Llama 3.1 8B) for 30-day rate forecasting alongside automated Telegram and Discord notification channels.
 
 * **[VULNEXUS](https://github.com/SubharupBiswas/VULNEXUS)**
-  * Modular Python and Flask Extended Detection and Response (XDR) platform designed for local network vulnerability scanning and OS auditing.
-  * Features real-time threat intelligence lookups, malware signature analysis, and SOC-style automated security auditing workflows.
-  * Engineered explicit IST (Asia/Kolkata) timestamp synchronization across SQLite3 backend write hooks and web UI topbar components.
+  * All-in-one Extended Detection and Response (XDR) cybersecurity platform built with Python, Flask, and SQLite3.
+  * Provides SOC capabilities including local network vulnerability scanning, threat intelligence lookup, malware signature analysis, and OS auditing.
 
 * **[cidr-subnet-calculator](https://github.com/SubharupBiswas/cidr-subnet-calculator)**
-  * High-performance IPv4 CIDR subnet engine, VLSM planner, and interactive binary stream topology visualizer built with React 19 and Next.js 16.
-  * Achieved 100/100 Lighthouse ratings across Performance, Accessibility, Best Practices, and SEO.
-  * Fully responsive design adhering strictly to WCAG AA/AAA accessibility standards.
+  * High-performance IPv4 CIDR subnetting engine and Variable-Length Subnet Mask (VLSM) planner built using React 19 and Next.js 16.
+  * Features real-time binary stream topology visualizations with perfect PageSpeed performance and full WCAG accessibility compliance.
 
 <!-- AUTO-SUMMARY:END -->
 
